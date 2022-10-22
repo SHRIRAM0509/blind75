@@ -4,6 +4,7 @@
 '''
 * Rows can be set as zeroes easily without any loop
 * Columns are tougher. So, it has to be maintained. We need a j_set
+* Final solution is O(nm) time and O(m) time
 '''
 
 
