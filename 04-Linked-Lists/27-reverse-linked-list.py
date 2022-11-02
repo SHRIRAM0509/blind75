@@ -14,9 +14,12 @@ Iteration:-
 '''
 
 
+from models.ListNode import ListNode
 from typing import Optional
+import os
+import sys
 
-from ListNode import ListNode
+sys.path.insert(1, os.getcwd())  # to make imports work
 
 
 def reverse_list_recursion(head: Optional[ListNode], prev=None) -> Optional[ListNode]:
@@ -27,6 +30,7 @@ def reverse_list_recursion(head: Optional[ListNode], prev=None) -> Optional[List
 		return ListNode(head.val, prev)
 
 	return reverse_list(head.next, ListNode(head.val, prev))
+
 
 def reverse_list(head: Optional[ListNode], prev=None) -> Optional[ListNode]:
 	if not head:

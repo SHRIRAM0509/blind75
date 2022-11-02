@@ -14,8 +14,12 @@
 
 
 from typing import List, Optional
+import os
+import sys
 
-from ListNode import ListNode
+sys.path.insert(1, os.getcwd()) # to make imports work
+
+from models.ListNode import ListNode
 
 
 # refer ./29.merge-two-sorted-lists.py

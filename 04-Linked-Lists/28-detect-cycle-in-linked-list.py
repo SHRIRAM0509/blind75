@@ -18,8 +18,12 @@ Fast Algorithm:-
 
 from collections import defaultdict
 from typing import Optional
+import os
+import sys
 
-from ListNode import ListNode
+sys.path.insert(1, os.getcwd()) # to make imports work
+
+from models.ListNode import ListNode
 
 
 def has_cycle_dict(self, head: Optional[ListNode]) -> bool:

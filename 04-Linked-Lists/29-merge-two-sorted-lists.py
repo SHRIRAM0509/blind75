@@ -8,8 +8,12 @@
 
 
 from typing import Optional
+import os
+import sys
 
-from ListNode import ListNode
+sys.path.insert(1, os.getcwd())  # to make imports work
+
+from models.ListNode import ListNode
 
 
 def merge_two_lists(self, list1: Optional[ListNode], list2: Optional[ListNode]) -> Optional[ListNode]:
