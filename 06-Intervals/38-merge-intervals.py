@@ -18,7 +18,7 @@ from Interval import Interval
 
 def merge(intervals: List[List[int]]) -> List[List[int]]:
     intervals = sorted(intervals, key=lambda x: x[0])
-    intervals: List[Interval] = [Interval.from_list(
+    intervals: List[Interval] = [Interval(
         interval) for interval in intervals]
 
     def reducer(acc: List[Interval], i: Interval):

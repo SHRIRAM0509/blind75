@@ -18,9 +18,9 @@ def insert(intervals: List[List[int]], new_interval: List[int]) -> List[List[int
     if not intervals:
         return [new_interval]
 
-    intervals: List[Interval] = [Interval.from_list(
+    intervals: List[Interval] = [Interval(
         interval) for interval in intervals]
-    new_interval: Interval = Interval.from_list(new_interval)
+    new_interval: Interval = Interval(new_interval)
 
     def reducer(acc: List[Interval], i: Interval):
         if not acc:

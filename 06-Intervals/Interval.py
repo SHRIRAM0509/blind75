@@ -2,25 +2,25 @@
 
 
 from __future__ import annotations
-from dataclasses import dataclass
 from typing import List, Annotated
 
 
-@dataclass
 class Interval:
-	start: int
-	end: int
- 
-	@classmethod
-	def from_list(cls, interval: Annotated[List[int], 2]) -> bool:
-		start, end = interval
-		return cls(start, end)
+
+	def __init__(self, interval: Annotated[List[int], 2]) -> bool:
+		self.start, self.end = interval
 
 	def __gt__(self, other: Interval) -> bool:
 		return self.start > other.end
 
 	def __lt__(self, other: Interval) -> bool:
 		return self.end < other.start
+
+	def __ge__(self, other: Interval) -> bool:
+		return self.start >= other.end
+
+	def __le__(self, other: Interval) -> bool:
+		return self.end <= other.start
 
 	def _overlaps(self, other: Interval) -> bool:
 		return not (self > other or self < other)
