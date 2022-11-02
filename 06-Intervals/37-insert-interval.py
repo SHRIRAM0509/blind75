@@ -26,11 +26,10 @@ def insert(intervals: List[List[int]], new_interval: List[int]) -> List[List[int
 
 
 def main():
-    # intervals: List[List[int]] = [list(map(int, input(f"Enter interval #{i}").split())) for i in range(
-    #     int(input("Enter no of rows:")))]
-    # new_interval: List[int] = list(map(int, input().split()))
-    print(insert([[1, 2], [3, 5], [6, 7], [8, 10], [12, 16]], [4, 8]))
-
+    intervals: List[List[int]] = [list(map(int, input(f"Enter interval #{i}").split())) for i in range(
+        int(input("Enter no of rows:")))]
+    new_interval: List[int] = list(map(int, input().split()))
+    print(insert(intervals, new_interval))
 
 if __name__ == '__main__':
     main()
