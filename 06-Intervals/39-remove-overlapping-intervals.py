@@ -1,11 +1,10 @@
-# https://leetcode.com/problems/merge-intervals
+# https://leetcode.com/problems/non-overlapping-intervals/
 
 
 '''
-* Brute force takes O(n^2) time
-* Sort intervals by their start
-* Convert lists to intervals
-* Use a reduce function to merge intervals
+* Sort intervals by (end, start)
+* If curr start >= prev end -> then there's no overlap, so prev end = curr end
+* else increment count
 * Takes O(n^logn) time and O(1) extra space
 '''
 
@@ -19,13 +18,13 @@ from Interval import Interval
 def erase_overlap_intervals(intervals: List[List[int]]) -> int:
 	if not intervals:
 		return 0
-
 	intervals.sort(key=lambda x:(x[1],x[0]))
-	count, curr_end = 0, intervals[0][1]
-	for start, end in intervals[1:]:
-		if start >= curr_end:
-			curr_end = end
-		else:
+ 
+	count, prev_end = 0, intervals[0][1]
+	for curr_start, curr_end in intervals[1:]:
+		if curr_start >= prev_end: # no overlap, so keep moving forward
+			prev_end = curr_end
+		else: # overlap
 			count += 1
 	return count
 
