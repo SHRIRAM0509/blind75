@@ -13,7 +13,7 @@ import sys
 
 sys.path.insert(1, os.getcwd())  # to make imports work
 
-from models.ListNode import ListNode
+from ListNode import ListNode
 
 
 def merge_two_lists(self, list1: Optional[ListNode], list2: Optional[ListNode]) -> Optional[ListNode]:

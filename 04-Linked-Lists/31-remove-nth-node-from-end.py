@@ -15,7 +15,7 @@ import sys
 
 sys.path.insert(1, os.getcwd()) # to make imports work
 
-from models.ListNode import ListNode
+from ListNode import ListNode
 
 
 def remove_nth_from_end(head: Optional[ListNode], n: int) -> Optional[ListNode]:

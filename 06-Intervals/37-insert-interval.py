@@ -1,7 +1,8 @@
 from typing import List
 from functools import reduce
 
-from models.Interval import Interval
+from Interval import Interval
+
 
 def insert(intervals: List[List[int]], new_interval: List[int]) -> List[List[int]]:
     if not intervals:

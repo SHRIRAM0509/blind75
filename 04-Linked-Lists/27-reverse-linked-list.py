@@ -14,7 +14,7 @@ Iteration:-
 '''
 
 
-from models.ListNode import ListNode
+from ListNode import ListNode
 from typing import Optional
 import os
 import sys

@@ -23,7 +23,7 @@ import sys
 
 sys.path.insert(1, os.getcwd()) # to make imports work
 
-from models.ListNode import ListNode
+from ListNode import ListNode
 
 
 def has_cycle_dict(self, head: Optional[ListNode]) -> bool:

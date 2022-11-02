@@ -19,7 +19,7 @@ import sys
 
 sys.path.insert(1, os.getcwd()) # to make imports work
 
-from models.ListNode import ListNode
+from ListNode import ListNode
 
 
 # refer ./29.merge-two-sorted-lists.py

@@ -22,7 +22,7 @@ import sys
 
 sys.path.insert(1, os.getcwd()) # to make imports work
 
-from models.ListNode import ListNode
+from ListNode import ListNode
 
 
 # Also called as Floyd's Tortoise and Hare algorithm
