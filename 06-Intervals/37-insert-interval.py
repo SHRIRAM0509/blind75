@@ -1,3 +1,13 @@
+# https://leetcode.com/problems/insert-interval/
+
+
+'''
+* Convert lists to intervals
+* Use a reduce function to merge intervals
+* Takes O(n) time and O(1) extra space
+'''
+
+
 from typing import List
 from functools import reduce
 
@@ -12,17 +22,15 @@ def insert(intervals: List[List[int]], new_interval: List[int]) -> List[List[int
         interval) for interval in intervals]
     new_interval: Interval = Interval.from_list(new_interval)
 
-    def reducer(a: Interval, b: Interval, acc):
+    def reducer(acc: List[Interval], i: Interval):
         if not acc:
-            return a.merge(b)
-        *rest, b = acc
-        rest.extend(a.merge(b))
-        return rest
+            return i.merge(new_interval) # merge might return one/two intervals depending on whether they overlap
 
-    intervals = reduce(lambda acc, x: reducer(
-        x, new_interval, acc), intervals, [])
+        # acc.pop() removes and returns last element
+        acc.extend(i.merge(acc.pop()))
+        return acc
 
-    return [interval.to_list() for interval in intervals]
+    return [interval.to_list() for interval in reduce(reducer, intervals, [])]
 
 
 def main():
@@ -30,6 +38,7 @@ def main():
         int(input("Enter no of rows:")))]
     new_interval: List[int] = list(map(int, input().split()))
     print(insert(intervals, new_interval))
+
 
 if __name__ == '__main__':
     main()
