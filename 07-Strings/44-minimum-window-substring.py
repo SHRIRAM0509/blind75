@@ -46,3 +46,12 @@ def min_window(s: str, t: str) -> str:
 				left += 1
 
 	return s[slice(*min_window)] if min_window else ""
+
+
+def main():
+	s, t = input().split()
+	print(min_window(s, t))
+
+
+if __name__ == '__main__':
+	main()
